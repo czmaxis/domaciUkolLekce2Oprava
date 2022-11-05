@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.time.LocalDate</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.stream.Collectors</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Guest Adela = </span><span class="s0">new </span><span class="s1">Guest(</span><span class="s2">&quot;Adéla&quot;</span><span class="s0">, </span><span class="s2">&quot;Malíková&quot;</span><span class="s0">, </span><span class="s1">LocalDate.of(</span><span class="s3">1993</span><span class="s0">, </span><span class="s3">3</span><span class="s0">, </span><span class="s3">13</span><span class="s1">) )</span><span class="s0">;</span>
+        <span class="s1">Guest Jan = </span><span class="s0">new </span><span class="s1">Guest(</span><span class="s2">&quot;Jan&quot;</span><span class="s0">, </span><span class="s2">&quot;Dvořáček&quot;</span><span class="s0">, </span><span class="s1">LocalDate.of(</span><span class="s3">1995</span><span class="s0">, </span><span class="s3">5</span><span class="s0">, </span><span class="s3">5</span><span class="s1">))</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Hosté informace: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(Adela.getName())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(Adela.getSurname())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(Adela.getBorn())</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(Jan.getName())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(Jan.getSurname())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(Jan.getBorn())</span><span class="s0">;</span>
+
+        <span class="s1">Room number_1 = </span><span class="s0">new </span><span class="s1">Room(</span><span class="s3">1</span><span class="s0">,</span><span class="s3">1</span><span class="s0">,</span><span class="s3">1000</span><span class="s0">,true, true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Room number_2 = </span><span class="s0">new </span><span class="s1">Room(</span><span class="s3">2</span><span class="s0">,</span><span class="s3">1</span><span class="s0">,</span><span class="s3">1000</span><span class="s0">, true, true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Room number_3 = </span><span class="s0">new </span><span class="s1">Room(</span><span class="s3">3</span><span class="s0">,</span><span class="s3">3</span><span class="s0">, </span><span class="s3">2400</span><span class="s0">, false, true</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Pokoje infromace: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s4">//boolean to String</span>
+        <span class="s1">String balcony1=String.valueOf(number_1.haveBalcony)</span><span class="s0">;</span>
+        <span class="s1">String sea1=String.valueOf(number_1.seaView)</span><span class="s0">;</span>
+        <span class="s1">String balcony2=String.valueOf(number_2.haveBalcony)</span><span class="s0">;</span>
+        <span class="s1">String sea2=String.valueOf(number_2.seaView)</span><span class="s0">;</span>
+        <span class="s0">;</span><span class="s1">String balcony3=String.valueOf(number_3.haveBalcony)</span><span class="s0">;</span>
+        <span class="s1">String sea3=String.valueOf(number_3.seaView)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Pokoj č. 1 &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_1.getRoomNumber())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_1.getNumberOfbeds())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_1.getRoomCost())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(balcony1)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(sea1)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Pokoj č. 2 &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_2.getRoomNumber())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_2.getNumberOfbeds())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_2.getRoomCost())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(balcony2)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(sea2)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Pokoj č. 3 &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_3.getRoomNumber())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_3.getNumberOfbeds())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(number_3.getRoomCost())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(balcony3)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(sea3)</span><span class="s0">;</span>
+
+
+
+
+
+
+        <span class="s1">Booking adelaAlone = </span><span class="s0">new </span><span class="s1">Booking(LocalDate.of(</span><span class="s3">2021</span><span class="s0">,</span><span class="s3">7</span><span class="s0">, </span><span class="s3">19</span><span class="s1">)</span><span class="s0">,</span><span class="s1">LocalDate.of(</span><span class="s3">2021</span><span class="s0">, </span><span class="s3">7</span><span class="s0">, </span><span class="s3">26</span><span class="s1">)</span><span class="s0">,false, true, </span><span class="s3">1 </span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Booking adelaAndjan = </span><span class="s0">new </span><span class="s1">Booking(LocalDate.of(</span><span class="s3">2021</span><span class="s0">, </span><span class="s3">9</span><span class="s0">, </span><span class="s3">14</span><span class="s1">)</span><span class="s0">, </span><span class="s1">LocalDate.of(</span><span class="s3">2021</span><span class="s0">, </span><span class="s3">9</span><span class="s0">, </span><span class="s3">14</span><span class="s1">)</span><span class="s0">,false, true, </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">ArrayList&lt;Booking&gt; bookings = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">bookings.add(adelaAlone)</span><span class="s0">;</span>
+        <span class="s1">bookings.add(adelaAndjan)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;seznam rezervací:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">System.out.println(</span><span class="s2">&quot;rezervace Adéla&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAlone.getRoomNumberbooking())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAlone.getStartOfreservation())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAlone.getEndOfreservation())</span><span class="s0">;</span>
+
+            <span class="s1">System.out.println(</span><span class="s2">&quot;rezervace Jan a Adéla&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAndjan.getRoomNumberbooking())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAndjan.getStartOfreservation())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(adelaAndjan.getEndOfreservation())</span><span class="s0">;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="s1">}</span>
+    <span class="s1">}</span></pre>
+</body>
+</html>
