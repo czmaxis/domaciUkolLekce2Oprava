@@ -2,30 +2,44 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Booking {
-int roomNumberbooking;
-LocalDate startOfreservation;
-LocalDate endOfreservation;
-boolean workStay;
-boolean holidayStay;
+    Room room;
+    Guest guest;
+//private int roomNumberbooking;
+private LocalDate startOfreservation;
+private LocalDate endOfreservation;
+private boolean workStay;
+private boolean holidayStay;
 
 ArrayList<Booking> bookings = new ArrayList<>();
 
 
-    public Booking(LocalDate startOfreservation, LocalDate endOfreservation, boolean workStay, boolean holidayStay, int roomNumberbooking ){
-        this.roomNumberbooking = roomNumberbooking;
+    public Booking(LocalDate startOfreservation, LocalDate endOfreservation, boolean workStay, boolean holidayStay, Room room ){
+        this.room = room;
         this.startOfreservation = startOfreservation;
     this.endOfreservation = endOfreservation;
     this.workStay = workStay;
     this.holidayStay = holidayStay;
 }
 
-    public int getRoomNumberbooking() {
-        return roomNumberbooking;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoomNumberbooking(int roomNumberbooking) {
-        this.roomNumberbooking = roomNumberbooking;
+    public void setRoom(Room room) {
+        this.room = room;
     }
+
+    public Guest getGuest() {
+        return guest;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
+//    public void setRoomNumberbooking(int roomNumberbooking) {
+//        this.roomNumberbooking = roomNumberbooking;
+//    }
 
     public LocalDate getStartOfreservation() {
         return startOfreservation;

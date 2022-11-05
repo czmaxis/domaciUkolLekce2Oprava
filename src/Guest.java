@@ -2,9 +2,9 @@ import java.time.LocalDate;
 
 
 public class Guest {
-    String name;
-    String surname;
-    LocalDate born ;
+   private String name;
+    private String surname;
+    private LocalDate born ;
 
 
 public Guest(String name, String surname,  LocalDate born) {
